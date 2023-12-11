@@ -20,7 +20,8 @@ export default function Profile() {
     await supabase.auth.signOut();
     setUser(undefined);
   };
-  // const isAdmin = user?.role === "admin";
+
+  const isAdmin = user?.user_metadata?.role === "admin";
   // const isSub = user?.stripe_customer_id;
 
   return (
@@ -43,7 +44,7 @@ export default function Profile() {
           <ManageBill customerId={user?.stripe_customer_id!} />
         )} */}
 
-        {/* {isAdmin && (
+        {isAdmin && (
           <Link href="/dashboard">
             <Button
               variant="ghost"
@@ -52,7 +53,7 @@ export default function Profile() {
               Dashboard <DashboardIcon />
             </Button>
           </Link>
-        )} */}
+        )}
 
         <Button
           variant="ghost"

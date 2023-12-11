@@ -1,10 +1,9 @@
-import React from "react";
-// import BlogTable from "./blog/components/BlogTable";
+import BlogTable from "./blog/components/BlogTable";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { PlusIcon } from "@radix-ui/react-icons";
 
-export default function Blog() {
+export default function Dashboard() {
 	return (
 		<div className="space-y-5">
 			<div className="flex items-center justify-between">
@@ -19,7 +18,7 @@ export default function Blog() {
 				</Link>
 			</div>
 
-			{/* <BlogTable /> */}
+			<BlogTable />
 		</div>
 	);
 }
