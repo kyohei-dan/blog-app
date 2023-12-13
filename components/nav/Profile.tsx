@@ -1,11 +1,10 @@
-import React from "react";
-import {Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import Link from "next/link";
 import Image from "next/image";
+import { createBrowserClient } from "@supabase/ssr";
 import { useUser } from "@/lib/store/user";
+import {Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
 import { DashboardIcon, LockOpen1Icon } from "@radix-ui/react-icons";
-import Link from "next/link";
-import { createBrowserClient } from "@supabase/ssr";
 // import ManageBill from "../stripe/ManageBill";
 
 export default function Profile() {

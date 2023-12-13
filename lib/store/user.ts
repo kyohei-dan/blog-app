@@ -1,6 +1,6 @@
 import { User } from "@supabase/supabase-js";
 import { create } from "zustand";
-// import { Iuser } from "../types";
+import { Iuser } from "../types";
 
 interface UserState {
   user: User | undefined;

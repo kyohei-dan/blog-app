@@ -1,32 +1,19 @@
 "use client";
 
-import { zodResolver } from "@hookform/resolvers/zod";
+import Image from "next/image";
+import { useState, useTransition } from "react";
+import { cn } from "@/lib/utils";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import MarkdownPreview from "@/components/markdown/MarkdownPreview";
-import Image from "next/image";
-import { cn } from "@/lib/utils";
-import {
-  EyeOpenIcon,
-  Pencil1Icon,
-  RocketIcon,
-  StarIcon,
-} from "@radix-ui/react-icons";
-import { ReactNode, useState, useTransition } from "react";
-// import { IBlogDetial, IBlogForm } from "@/lib/types";
 import { Switch } from "@/components/ui/switch";
+import { Textarea } from "@/components/ui/textarea";
+import { Form,FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import MarkdownPreview from "@/components/markdown/MarkdownPreview";
 import { BsSave } from "react-icons/bs";
+import { EyeOpenIcon, Pencil1Icon, RocketIcon, StarIcon } from "@radix-ui/react-icons";
+import { IBlogDetial, IBlogForm } from "@/lib/types";
 import { BlogFormSchema, BlogFormSchemaType } from "../schema";
 
 export default function BlogForm({
@@ -67,10 +54,7 @@ export default function BlogForm({
           <div className="flex items-center flex-wrap gap-5">
             <span
               onClick={() => {
-                setPreivew(
-                  !isPreview &&
-                    !form.getFieldState("image_url").invalid
-                );
+                setPreivew(!isPreview && !form.getFieldState("image_url").invalid);
               }}
               role="button"
               tabIndex={0}
@@ -88,6 +72,7 @@ export default function BlogForm({
                 </>
               )}
             </span>
+
             <FormField
               control={form.control}
               name="is_premium"
@@ -108,6 +93,7 @@ export default function BlogForm({
                 </FormItem>
               )}
             />
+
             <FormField
               control={form.control}
               name="is_published"
@@ -116,10 +102,7 @@ export default function BlogForm({
                   <FormControl>
                     <div className="flex items-center gap-1 border p-2 rounded-md">
                       <RocketIcon />
-
-                      <span className="text-sm">
-                        Publish
-                      </span>
+                      <span className="text-sm">Publish</span>
                       <Switch
                         checked={field.value}
                         onCheckedChange={field.onChange}
@@ -133,16 +116,14 @@ export default function BlogForm({
 
           <button
             type="submit"
-            className={cn(
-              "flex gap-2 items-center border px-3 py-2 rounded-md border-green-500 disabled:border-gray-800 transition-all group text-s",
-              { "animate-spin": isPending }
-            )}
-            disabled={!form.formState.isValid}
+            className="flex gap-2 items-center border px-3 py-2 rounded-md border-green-500 disabled:border-gray-800 transition-all group text-s"
+            disabled={ !form.formState.isValid }
           >
-            <BsSave className=" animate-bounce group-disabled:animate-none" />
+            <BsSave className="animate-bounce group-disabled:animate-none" />
             Save
           </button>
         </div>
+
         <FormField
           control={form.control}
           name="title"
@@ -186,12 +167,11 @@ export default function BlogForm({
                 </>
               </FormControl>
 
-              {form.getFieldState("title").invalid &&
-                form.getValues().title && (
-                  <div className="px-2">
-                    <FormMessage />
-                  </div>
-                )}
+              {form.getFieldState("title").invalid && form.getValues().title && (
+                <div className="px-2">
+                  <FormMessage />
+                </div>
+              )}
             </FormItem>
           )}
         />
@@ -300,8 +280,7 @@ export default function BlogForm({
                 </div>
               </FormControl>
 
-              {form.getFieldState("content").invalid &&
-                form.getValues().content && <FormMessage />}
+              {form.getFieldState("content").invalid && form.getValues().content && <FormMessage />}
             </FormItem>
           )}
         />

@@ -1,9 +1,8 @@
 "use client";
-import { cn } from "@/lib/utils";
-import { PersonIcon, ReaderIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
+import { cn } from "@/lib/utils";
+import { PersonIcon, ReaderIcon } from "@radix-ui/react-icons";
 
 export default function NavLinks() {
   const pathname = usePathname();

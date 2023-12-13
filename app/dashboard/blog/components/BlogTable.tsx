@@ -1,15 +1,13 @@
-import React from "react";
-import { EyeOpenIcon, Pencil1Icon, TrashIcon } from "@radix-ui/react-icons";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
-
-// import { IBlog } from "@/lib/types";
+import { IBlog } from "@/lib/types";
+import { readBlogAdmin, updateBlogById } from "@/lib/actions/blog";
 import SwitchForm from "./SwitchForm";
 import DeleteAlert from "./DeleteAlert";
-// import { readBlogAdmin, updateBlogById } from "@/lib/actions/blog";
+import { Button } from "@/components/ui/button";
+import { EyeOpenIcon, Pencil1Icon, TrashIcon } from "@radix-ui/react-icons";
 
 export default async function BlogTable() {
-  // const { data: blogs } = await readBlogAdmin();
+  const { data: blogs } = await readBlogAdmin();
 
   return (
     <>
@@ -21,7 +19,7 @@ export default async function BlogTable() {
             <h1>Publish</h1>
           </div>
           <div className="space-y-10 p-5">
-            {/* {blogs?.map((blog, index) => {
+            {blogs?.map((blog, index) => {
               const updatePremium = updateBlogById.bind(
                 null,
                 blog.id,
@@ -58,7 +56,7 @@ export default async function BlogTable() {
                   <Actions id={blog.id} />
                 </div>
               );
-            })} */}
+            })}
           </div>
         </div>
       </div>
@@ -72,7 +70,7 @@ const Actions = ({ id }: { id: string }) => {
       <Link href={`/blog/${id}`}>
         <Button className="flex gap-2 items-center" variant="outline">
           <EyeOpenIcon />
-          View
+          見る
         </Button>
       </Link>
       <DeleteAlert id={id} />
@@ -80,7 +78,7 @@ const Actions = ({ id }: { id: string }) => {
       <Link href={`/dashboard/blog/edit/${id}`}>
         <Button className="flex gap-2 items-center" variant="outline">
           <Pencil1Icon />
-          Edit
+          編集
         </Button>
       </Link>
     </div>

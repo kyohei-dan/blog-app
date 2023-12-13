@@ -21,6 +21,5 @@ export default function SessisonProvider() {
     setUser(data.session?.user);
   };
 
-
   return <></>;
 }

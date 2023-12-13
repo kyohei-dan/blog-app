@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { readUsers } from "@/lib/actions/user";
-import { users } from "@/lib/data";
 import { cn } from "@/lib/utils";
+import { users } from "@/lib/data";
+import { readUsers } from "@/lib/actions/user";
 
 export default async function page() {
   const { data } = await readUsers();
@@ -17,10 +17,7 @@ export default async function page() {
         <div className="space-y-10 p-5">
           {data?.map((user, index) => {
             return (
-              <div
-                className="grid grid-cols-3 grid-flow-dense"
-                key={index}
-              >
+              <div className="grid grid-cols-3 grid-flow-dense" key={index}>
                 <div className="flex items-center gap-2 font-medium">
                   <Image
                     src={user.image_url}
@@ -32,9 +29,7 @@ export default async function page() {
                   <h1>{user.display_name}</h1>
                 </div>
 
-                <SubscriptionStatus
-                  status={user.subscription_status}
-                />
+                <SubscriptionStatus status={user.subscription_status} />
                 <div className="flex items-center">
                   <h1>{user.stripe_customer_id}</h1>
                 </div>
@@ -46,6 +41,7 @@ export default async function page() {
     </div>
   );
 }
+
 const SubscriptionStatus = ({ status }: { status: boolean }) => {
   return (
     <div className="flex items-center">
