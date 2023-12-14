@@ -22,7 +22,7 @@ export default function RootLayout({
         <body className={cn("antialiased dark:bg-[#09090B]")}>
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
+            defaultTheme="light"
             enableSystem
             disableTransitionOnChange
           >
