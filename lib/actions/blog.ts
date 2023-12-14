@@ -90,10 +90,7 @@ export async function updateBlogById(blogId: string, data: IBlog) {
   return JSON.stringify(result);
 }
 
-export async function updateBlogDetail(
-  blogId: string,
-  data: BlogFormSchemaType
-) {
+export async function updateBlogDetail(blogId: string, data: BlogFormSchemaType) {
   const { ["content"]: excludedKey, ...blog } = data;
 
   const supabase = await createSupabaseServerClient();
@@ -101,6 +98,7 @@ export async function updateBlogDetail(
     .from("blog")
     .update(blog)
     .eq("id", blogId);
+
   if (resultBlog.error) {
     return JSON.stringify(resultBlog);
   } else {
@@ -110,11 +108,11 @@ export async function updateBlogDetail(
       .eq("blog_id", blogId);
     revalidatePath(DASHBOARD);
     revalidatePath("/blog/" + blogId);
-
     return JSON.stringify(result);
   }
 }
 
+// /dashboardでブログを削除する処理
 export async function deleteBlogById(blogId: string) {
   const supabase = await createSupabaseServerClient();
   const result = await supabase.from("blog").delete().eq("id", blogId);

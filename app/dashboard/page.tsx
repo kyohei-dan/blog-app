@@ -3,7 +3,13 @@ import BlogTable from "./blog/components/BlogTable";
 import { Button } from "@/components/ui/button";
 import { PlusIcon } from "@radix-ui/react-icons";
 
-export default function Dashboard() {
+const sleep = async (ms: number) => {
+  return new Promise((res) => setTimeout(res, ms));
+};
+
+export default async function Dashboard() {
+
+  await sleep(3000);
   return (
     <div className="space-y-5">
       <div className="flex items-center justify-between">

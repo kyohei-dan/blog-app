@@ -20,8 +20,8 @@ export default function BlogForm({
   onHandleSubmit,
   defaultBlog,
 }: {
-  defaultBlog: IBlogDetial;
   onHandleSubmit: (data: BlogFormSchemaType) => void;
+  defaultBlog: IBlogDetial;
 }) {
   const [isPending, startTransition] = useTransition();
   const [isPreview, setPreivew] = useState(false);
@@ -46,10 +46,7 @@ export default function BlogForm({
 
   return (
     <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        className="w-full border pb-5 rounded-md"
-      >
+      <form onSubmit={form.handleSubmit(onSubmit)} className="w-full border pb-5 rounded-md">
         <div className="border-b p-5 flex items-center sm:justify-between flex-wrap sm:flex-row gap-2">
           <div className="flex items-center flex-wrap gap-5">
             <span
