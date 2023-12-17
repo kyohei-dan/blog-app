@@ -23,6 +23,7 @@
 | サーバー       | Vercel                       |
 | DB             | Supabase                     |
 | 認証           | Supabase                     |
+| 決済           | Stripe                       |
 
 ---
 
