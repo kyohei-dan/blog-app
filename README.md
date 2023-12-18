@@ -2,12 +2,12 @@
 
 ## 1. プロジェクト概要
 
-このアプリは Next.js, Supabase, Straipe を使用したブログ SaaS アプリです。
+> [!NOTE]
+> このアプリは Next.js, Supabase, Straipe を使用したブログ SaaS アプリです。
 
 ### URL
 
-> [!URL]
-> test
+<a href="" target="_blank"><strong>リンク</strong></a>
 
 ---
 
