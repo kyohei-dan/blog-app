@@ -3,7 +3,7 @@
 ## 1. プロジェクト概要
 
 > [!NOTE]
-> このアプリは Next.js, Supabase, Straipe を使用したブログ SaaS アプリです。
+> このアプリは Next.js, Supabase, Stripe を使用したブログ SaaS アプリです。
 
 ### URL
 
