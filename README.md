@@ -6,7 +6,7 @@
 
 ### URL
 
-> [!NOTE]
+> [!URL]
 > test
 
 ---
