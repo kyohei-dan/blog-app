@@ -6,7 +6,7 @@
 
 ### URL
 
-<a href="" target="_blank"><strong>リンク</strong></a>
+> [!NOTE] > <a href="" target="_blank"><strong>リンク</strong></a>
 
 ---
 
