@@ -1,5 +1,7 @@
 import { cn } from "@/lib/utils";
 import Markdown from "react-markdown";
+import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
 import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/atom-one-light.min.css";
 import CopyButton from "./CopyButton";
@@ -15,8 +17,9 @@ export default function MarkdownPreview({
 }) {
   return (
     <Markdown
-      className={cn("dark:text-gray-200 space-y-8", className)}
-      rehypePlugins={[rehypeHighlight]}
+      className={cn("dark:text-gray-200 space-y-8 prose", className)}
+      remarkPlugins={[remarkGfm]}
+      rehypePlugins={[rehypeRaw, rehypeHighlight]}
       components={{
         h1: ({ node, ...props }) => {
           return <h1 {...props} className="text-3xl font-bold" />;
@@ -69,7 +72,7 @@ export default function MarkdownPreview({
           } else {
             return (
               <code
-                className="text-lg break-words bg-zinc-700 px-1 rounded-sm"
+                className="text-lg break-words px-1 rounded-sm"
                 {...props}
               >
                 {children}

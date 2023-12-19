@@ -20,7 +20,7 @@ export default function CopyButton({ id }: { id: string }) {
   return (
     <div onClick={handleCopy} className="hover:scale-105 relative hover:bg-zinc-700 p-2 rounded-md cursor-pointer">
       <IoCheckmarkOutline
-        className={`" cursor-pointer  transition-all w-5 h-5  text-green-500 ${
+        className={`" cursor-pointer  transition-all w-5 h-5 text-green-500 ${
           onSuccess ? "scale-100 " : "scale-0 "
         }`}
         onTransitionEnd={() => {
