@@ -6,7 +6,7 @@ export default function loading() {
         <div className="h-10 w-48 bg-gray-300 rounded-md"></div>
       </div>
       <div className="border h-96 rounded-md bg-gray-300"></div>
-      <span className="sr-only">Loading...</span>
+      <span className="sr-only">読み込み中</span>
     </div>
   );
 }
