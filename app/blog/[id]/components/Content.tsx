@@ -1,10 +1,10 @@
 "use client";
-import MarkdownPreview from "@/components/markdown/MarkdownPreview";
+import React, { useEffect, useState, useTransition } from "react";
 import { Database } from "@/lib/types/supabase";
 import { createBrowserClient } from "@supabase/ssr";
-import React, { useEffect, useState, useTransition } from "react";
 import { BlogContentLoading } from "./Skeleton";
-// import Checkout from "@/components/stripe/Checkout";
+import Checkout from "@/components/stripe/Checkout";
+import MarkdownPreview from "@/components/markdown/MarkdownPreview";
 
 export default function Content({ blogId }: { blogId: string }) {
   const [loading, setLoading] = useState(true);
@@ -28,9 +28,7 @@ export default function Content({ blogId }: { blogId: string }) {
 
   if (loading) return <BlogContentLoading />;
 
-  // if (!blog?.content) {
-  //   return <Checkout />;
-  // }
+  if (!blog?.content) return <Checkout />;
 
   return <MarkdownPreview content={blog?.content || ""} />;
 }
