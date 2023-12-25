@@ -11,6 +11,13 @@ module.exports = {
       },
     },
     extend: {
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            maxWidth: "100%",
+          },
+        },
+      }),
       spacing: {
         "100vh": "100vh",
       },

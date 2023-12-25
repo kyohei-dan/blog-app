@@ -38,7 +38,7 @@ export default async function BlogTable() {
 
               return (
                 <div className="grid grid-cols-5" key={index}>
-                  <h1 className="dark:text-gray-200 col-span-2 font-lg font-medium">
+                  <h1 className="col-span-2 font-lg font-medium">
                     {blog.title}
                   </h1>
                   <SwitchForm

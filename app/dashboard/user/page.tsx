@@ -53,7 +53,7 @@ const SubscriptionStatus = ({ status }: { status: boolean }) => {
             : "border-zinc-300 dark:text-red-400 dark:border-yellow-700 px-4 bg-red-50"
         )}
       >
-        {status ? "Active" : "Inactive"}
+        {status ? "有料会員" : "非有料会員"}
       </span>
     </div>
   );

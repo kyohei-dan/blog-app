@@ -17,7 +17,7 @@ export default function MarkdownPreview({
 }) {
   return (
     <Markdown
-      className={cn("dark:text-gray-200 space-y-8 prose", className)}
+      className={cn("space-y-8 prose", className)}
       remarkPlugins={[remarkGfm]}
       rehypePlugins={[rehypeRaw, rehypeHighlight]}
       components={{

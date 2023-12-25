@@ -155,7 +155,7 @@ export default function BlogForm({
                           : " w-1/2 lg:block hidden "
                       )}
                     >
-                      <h1 className="text-3xl font-bold dark:text-gray-200">
+                      <h1 className="text-3xl font-bold">
                         {form.getValues().title ||
                           "Untittle blog"}
                       </h1>
