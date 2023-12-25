@@ -11,6 +11,9 @@ module.exports = {
       },
     },
     extend: {
+      spacing: {
+        "100vh": "100vh",
+      },
       backgroundImage: {
         "graident-dark": "radial-gradient(76.33% 76.59% at 50.15% 6.06%, #1A1A1A 0%, rgba(26, 26, 26, 0.38) 100%)",
       },

@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
     return {
       title: blog?.title,
       authors: {
-        name: "kyohei-dan",
+        name: "Kyohei Dan",
       },
       openGraph: {
         title: blog?.title,

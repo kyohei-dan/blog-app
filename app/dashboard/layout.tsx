@@ -3,28 +3,28 @@ import type { Metadata } from "next";
 import NavLinks from "./components/NavLinks";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://dailyblog-demo.vercel.app/"),
+  metadataBase: new URL(`${process.env.SITE_URL}`),
 
   title: {
-    template: "%s | Dashboard",
-    default: "Dashboard",
+    template: "%s | Blog SaaS App",
+    default: "Blog SaaS App",
   },
   authors: {
-    name: "chensokheng",
+    name: "Kyohei Dan",
   },
 
   description:
-    "Empower your decision-making with our intuitive dashboard. Gain valuable insights at a glance with interactive visualizations and real-time analytics. Our dashboard provides a centralized hub for monitoring key metrics, tracking progress, and making data-driven decisions. Streamline your workflow, enhance collaboration, and stay ahead of the curve with customizable widgets and personalized dashboards. Experience the power of data in a user-friendly interface designed to optimize productivity and drive results.",
+    "このアプリは Next.js, Supabase, Stripe を使用したブログ SaaS アプリです。",
   openGraph: {
-    title: "Dashboard",
+    title: "Blog SaaS App",
     description:
-      "Empower your decision-making with our intuitive dashboard. Gain valuable insights at a glance with interactive visualizations and real-time analytics. Our dashboard provides a centralized hub for monitoring key metrics, tracking progress, and making data-driven decisions. Streamline your workflow, enhance collaboration, and stay ahead of the curve with customizable widgets and personalized dashboards. Experience the power of data in a user-friendly interface designed to optimize productivity and drive results.",
-    url: "https://dailyblog-demo.vercel.app/",
-    siteName: "Daily Blog",
-    images: "/og-dashboard.png",
+      "このアプリは Next.js, Supabase, Stripe を使用したブログ SaaS アプリです。",
+    url: `${process.env.SITE_URL}`,
+    siteName: "Blog SaaS App",
+    images: "/og.png",
     type: "website",
   },
-  keywords: ["daily web coding", "chensokheng", "dailywebcoding"],
+  keywords: ["Blog SaaS App", "Blog", "ブログ"],
 };
 
 export default function DashboardLayout({ children }: { children: ReactNode }) {
