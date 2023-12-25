@@ -7,7 +7,7 @@
 
 ### URL
 
-<a href="" target="_blank"><strong>リンク</strong></a>
+<a href="https://blog-saas-app.vercel.app" target="_blank"><strong>https://blog-saas-app.vercel.app</strong></a>
 
 ---
 
