@@ -2,38 +2,38 @@ import Image from "next/image";
 import { IBlog } from "@/lib/types";
 import Content from "./components/Content";
 
-// export async function generateStaticParams() {
-//   try {
-//     const response = await fetch(`${process.env.SITE_URL}/api/blog?id=*`, { method: "GET" });
-//     const { data: blogs } = await response.json();
-//     return blogs;
-//   } catch (error) {
-//     console.error("Error fetching blogs:", error);
-//   }
-// }
+export async function generateStaticParams() {
+  try {
+    const response = await fetch(`${process.env.SITE_URL}/api/blog?id=*`, { method: "GET" });
+    const { data: blogs } = await response.json();
+    return blogs;
+  } catch (error) {
+    console.error("Error fetching blogs:", error);
+  }
+}
 
-// export async function generateMetadata({ params }: { params: { id: string } }) {
-//   try {
-//     const response = await fetch(`${process.env.SITE_URL}/api/blog?id=${params.id}`, { method: "GET" });
-//     const { data: blog } = await response.json() as { data: IBlog };
+export async function generateMetadata({ params }: { params: { id: string } }) {
+  try {
+    const response = await fetch(`${process.env.SITE_URL}/api/blog?id=${params.id}`, { method: "GET" });
+    const { data: blog } = await response.json() as { data: IBlog };
 
-//     return {
-//       title: blog?.title,
-//       authors: {
-//         name: "kyohei-dan",
-//       },
-//       openGraph: {
-//         title: blog?.title,
-//         url: `${process.env.SITE_URL}/blog/${params.id}`,
-//         siteName: "Blog SaaS App",
-//         images: blog?.image_url,
-//         type: "article",
-//       }
-//     };
-//   } catch (error) {
-//       console.error("Error generating metadata:", error);
-//   }
-// }
+    return {
+      title: blog?.title,
+      authors: {
+        name: "kyohei-dan",
+      },
+      openGraph: {
+        title: blog?.title,
+        url: `${process.env.SITE_URL}/blog/${params.id}`,
+        siteName: "Blog SaaS App",
+        images: blog?.image_url,
+        type: "article",
+      }
+    };
+  } catch (error) {
+      console.error("Error generating metadata:", error);
+  }
+}
 
 export default async function page({ params }: { params: { id: string } }) {
   const response = await fetch(`${process.env.SITE_URL}/api/blog?id=${params.id}`, { method: "GET" });
