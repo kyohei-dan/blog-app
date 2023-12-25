@@ -1,7 +1,9 @@
 "use client";
+import { useEffect } from "react";
 import { useUser } from "@/lib/store/user";
 import { createBrowserClient } from "@supabase/ssr";
-import { useEffect } from "react";
+import { Database } from "@/lib/types/supabase";
+
 
 export default function SessisonProvider() {
   const setUser = useUser((state) => state.setUser);
