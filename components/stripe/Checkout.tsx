@@ -25,7 +25,7 @@ export default function Checkout() {
   if (!user) {
     return (
       <div className="flex items-center justify-center h-96 gap-2">
-        <LoginForm /> to continue
+        この記事は会員登録（有料）で続きをお読みいただけます。まずはGithubアカウント<LoginForm /> してください。
       </div>
     );
   }
@@ -50,10 +50,10 @@ export default function Checkout() {
               !isPending ? "animate-bounce" : "animate-spin"
             )}
           />
-          Upgrade to pro
+          会員登録（有料）で続きをお読みいただけます
         </h1>
         <p className="text-sm text-gray-500">
-          Unlock all Daily blog contents
+        全ての記事が閲覧できます
         </p>
       </button>
     </form>
